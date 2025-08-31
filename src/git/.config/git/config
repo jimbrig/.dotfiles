@@ -1,0 +1,60 @@
+# --------------------------------------------------------------
+# global .gitconfig
+# --------------------------------------------------------------
+
+# https://git-scm.com/docs/git-config
+
+[user]
+	email = jimmy.briggs@noclocks.dev
+	name = Jimmy Briggs
+	signingKey = ~/id_ed25519_noclocks
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.config/git/ignore
+	attributesfile = ~/.config/git/attributes
+	longpaths = true
+  autocrlf = false
+  safecrlf = true
+  fscache = true
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  ignorecase = false
+[push]
+  autoSetupRemote = true
+  default = matching
+[fetch]
+  prune = true
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[gpg]
+	program = ssh-keygen.exe
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/signers
+[credential]
+  helper = wincred
+[credential "https://github.com"]
+	helper = !'C:\\Program Files\\GitHub CLI\\gh.exe' auth git-credential
+[credential "https://gist.github.com"]
+	helper = !'C:\\Program Files\\GitHub CLI\\gh.exe' auth git-credential
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  grep = auto
+[alias]
+  st = status
+	cm = commit
+	co = checkout
+	br = branch
+  df = diff
+  lg = log --oneline --graph --decorate --all
+  amend = commit --amend --no-edit
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  type = cat-file -t
+  dump = cat-file -p

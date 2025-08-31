@@ -1,0 +1,44 @@
+# --------------------------------------------------------------
+# global `.gitattributes`
+# --------------------------------------------------------------
+
+# https://git-scm.com/docs/gitattributes
+# https://github.com/alexkaratarakis/gitattributes
+# https://github.com/github/linguist
+
+*                                                           text=auto
+*.{json,yaml,yml}                                           text
+*.{xml,xslt,xaml}                                           text
+*.{csv}                                                     text
+*.{sh,[sS][hH]}                                             text eol=lf
+*.{zsh,[zZ][sS][hH]}                                        text eol=lf
+*.{bash}                                                    text eol=lf
+*.{fish}                                                    text eol=lf
+*.{cmd,[cC][mM][dD]}                                        text eol=crlf
+*.{bat,[bB][aA][tT]}                                        text eol=crlf
+*.{ps1}                                                     text eol=crlf
+*.{csproj,[xX][mM][lL]}                                     text eol=crlf
+*.{sln}                                                     text eol=crlf
+*.{suo}                                                     text eol=crlf
+*.{user}                                                    text eol=crlf
+*.{png,jpg,jpeg,gif,svg,bmp,ico,psd,pspimage,thm,tif,tiff}  binary
+*.{eot,otf,ttf,woff,woff2}                                  binary
+*.{doc,docx,pages,key,numbers,ppt,pptx,ai,psd,svg,tif,tiff} binary
+*.{dmg,iso,toast,vcd}                                       binary
+*.{mp3,m4a,mpa,m4b,ogg,wav,wma,ra,ram}                      binary
+*.{3g2,3gp,asf,asx,avi,flv,m4v,mov,mp4,mpg,rm,swf,vob,wmv}  binary
+*.{7z,deb,gz,rar,zip,tar,tgz}                               binary
+*.{crt,key,p12,pem,pfx,csr}                                 binary
+*.{db,dll,exe,msi,sys}                                      binary
+*.{bak}                                                     binary
+*.{xla,xlam,xls,xlsb,xlsm,xlsx,xlt,xltm,xltx}               xl
+
+# --------------------------------------------------------------
+# linguist Settings
+# --------------------------------------------------------------
+# See .gitattributes.d/* for language specific settings
+
+# https://git-scm.com/docs/git-archive
+.gitattributes export-ignore
+.gitignore     export-ignore
+.gitkeep       export-ignore
